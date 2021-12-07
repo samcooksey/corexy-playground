@@ -16,7 +16,7 @@ export function BottomLeft({ backgroundColor, beltColors, beltWidth, offset, sca
       <div
         css={{
           position: 'absolute',
-          height: 500 - offset.y,
+          height: scale - offset.y,
           backgroundColor,
           opacity: 0.75,
           zIndex: -1,
@@ -71,7 +71,7 @@ export function BottomLeft({ backgroundColor, beltColors, beltWidth, offset, sca
                 marginLeft: 5,
               }}
             >
-              <BeltLength length={500 - offset.y} />
+              <BeltLength length={scale - offset.y} />
             </div>
           </div>
         )}

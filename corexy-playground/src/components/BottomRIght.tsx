@@ -16,11 +16,11 @@ export function BottomRight({ backgroundColor, beltColors, beltWidth, offset, sc
       <div
         css={{
           position: 'absolute',
-          height: 500 - offset.y,
+          height: scale - offset.y,
           backgroundColor,
           opacity: 0.75,
           zIndex: -1,
-          width: 500 - offset.x - beltWidth,
+          width: scale - offset.x - beltWidth,
         }}
       />
       <div

@@ -7,5 +7,9 @@ export function ArrowButton({
   text: string;
   onClick(): void;
 }>) {
-  return <button onClick={onClick}>{text}</button>;
+  return (
+    <button css={{ height: 30, width: 30 }} onClick={onClick}>
+      {text}
+    </button>
+  );
 }

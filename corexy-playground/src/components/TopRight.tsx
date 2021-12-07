@@ -21,7 +21,7 @@ export function TopRight({ backgroundColor, beltColors, beltWidth, offset, scale
           backgroundColor,
           opacity: 0.75,
           zIndex: -1,
-          width: 500 - offset.x - beltWidth,
+          width: scale - offset.x - beltWidth,
         }}
       />
       <div
