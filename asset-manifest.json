@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/corexy-playground/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/corexy-playground/static/js/main.e79faab3.chunk.js",
+    "main.js.map": "/corexy-playground/static/js/main.e79faab3.chunk.js.map",
+    "runtime-main.js": "/corexy-playground/static/js/runtime-main.c7b2e878.js",
+    "runtime-main.js.map": "/corexy-playground/static/js/runtime-main.c7b2e878.js.map",
+    "static/js/2.3a2c6f2a.chunk.js": "/corexy-playground/static/js/2.3a2c6f2a.chunk.js",
+    "static/js/2.3a2c6f2a.chunk.js.map": "/corexy-playground/static/js/2.3a2c6f2a.chunk.js.map",
+    "static/js/3.74672ea1.chunk.js": "/corexy-playground/static/js/3.74672ea1.chunk.js",
+    "static/js/3.74672ea1.chunk.js.map": "/corexy-playground/static/js/3.74672ea1.chunk.js.map",
+    "index.html": "/corexy-playground/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/corexy-playground/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.3a2c6f2a.chunk.js.LICENSE.txt": "/corexy-playground/static/js/2.3a2c6f2a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7b2e878.js",
+    "static/js/2.3a2c6f2a.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.e79faab3.chunk.js"
+  ]
+}
