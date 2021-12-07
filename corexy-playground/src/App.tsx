@@ -30,7 +30,7 @@ function App() {
   const center = useMemo(
     () => ({
       x: innerWidth / 2,
-      y: (innerHeight * 0.95) / 2 - scale / 2,
+      y: Math.max(innerHeight * 0.95, scale * 2) / 2 - scale / 2,
     }),
     [scale, innerWidth, innerHeight]
   );
@@ -116,10 +116,10 @@ function App() {
     [scale, leftMotorPosition, rightMotorPosition]
   );
   const onDrag = useCallback(
-    (clientX: number, clientY: number) => {
-      if (clientX && clientY) {
-        const offsetY = clientY - center.y + scale / 2;
-        const offsetX = clientX - center.x + scale / 2;
+    (x: number, y: number) => {
+      if (x && y) {
+        const offsetY = y - center.y + scale / 2;
+        const offsetX = x - center.x + scale / 2;
         const newLeftMotorPosition = (offsetY - offsetX) / 2;
         const newRightMotorPosition = (scale - offsetX - offsetY) / 2;
 
@@ -197,11 +197,12 @@ function App() {
         <div
           draggable="true"
           onTouchMove={({ changedTouches }) => {
-            const { clientX, clientY } = changedTouches[0];
-            onDrag(clientX, clientY);
+            const { pageX, pageY } = changedTouches[0];
+            onDrag(pageX, pageY);
           }}
-          onDrag={({ clientX, clientY }) => {
-            onDrag(clientX, clientY);
+          onDrag={(e) => {
+            const { pageX, pageY } = e;
+            onDrag(pageX, pageY);
           }}
           css={{
             position: 'absolute',
