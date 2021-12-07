@@ -5,7 +5,6 @@ import { ArrowButton } from './components/ArrowButton';
 import { BottomHalfBelt } from './components/BottomHalfBelt';
 import { TopHalfBelt } from './components/TopHalfBelt';
 
-// const scale = window.innerWidth > 550 ? 500 : window.innerWidth > 450 ? 400 : 350;
 const beltWidth = 10;
 const gearWidth = beltWidth * 2.5;
 const rotationScale = 3;
