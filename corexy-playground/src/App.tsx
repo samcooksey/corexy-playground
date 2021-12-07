@@ -22,15 +22,6 @@ function App() {
   });
   const [backgroundColors, setbackgroundColors] = useState(backgroundColorsBlank);
   const [showInfo, setShowInfo] = useState(false);
-  const { innerWidth, innerHeight } = window;
-
-  const center = useMemo(
-    () => ({
-      x: innerWidth / 2,
-      y: (innerHeight * 0.95) / 2 - scale / 4,
-    }),
-    [innerWidth, innerHeight]
-  );
 
   const centerPointOffset = useMemo(
     () => ({
@@ -109,7 +100,6 @@ function App() {
           }
         }, 0);
       }
-      console.log(`right, ${roundedRight}, left: ${roundedLeft}`);
     },
     [leftMotorPosition, rightMotorPosition]
   );
@@ -147,10 +137,8 @@ function App() {
             marginLeft: 70,
             marginTop: 70,
             zIndex: 2,
+            cursor: 'crosshair',
           }}
-          // onMouseMove={(event) => {
-          //   console.log(`offsetX: ${event.nativeEvent.offsetX}, offsetY: ${event.nativeEvent.offsetY}`);
-          // }}
           onClick={(event) => {
             const newX = event.nativeEvent.offsetX + 70;
             const newY = event.nativeEvent.offsetY + 70;
@@ -170,28 +158,6 @@ function App() {
           }}
         />
         <div
-          draggable="true"
-          onDrag={({ clientX, clientY }) => {
-            if (clientX && clientY) {
-              const offsetY = clientY - center.y + scale / 2;
-              const offsetX = clientX - center.x + scale / 2;
-              const newLeftMotorPosition = (offsetY - offsetX) / 2;
-              const newRightMotorPosition = (scale - offsetX - offsetY) / 2;
-
-              setMotors((prev) => ({
-                leftMotorPosition:
-                  newLeftMotorPosition >= prev.leftMotorPosition + rotationScale ||
-                  newLeftMotorPosition <= prev.leftMotorPosition - rotationScale
-                    ? newLeftMotorPosition - (newLeftMotorPosition % rotationScale)
-                    : prev.leftMotorPosition,
-                rightMotorPosition:
-                  newRightMotorPosition >= prev.rightMotorPosition + rotationScale ||
-                  newRightMotorPosition <= prev.rightMotorPosition - rotationScale
-                    ? newRightMotorPosition - (newRightMotorPosition % rotationScale)
-                    : prev.rightMotorPosition,
-              }));
-            }
-          }}
           css={{
             position: 'absolute',
             height: 40,
@@ -226,7 +192,7 @@ function App() {
         css={{
           width: scale,
           height: scale / 2,
-          backgroundColor: 'lavenderblush',
+          backgroundColor: 'lightsteelblue',
         }}
       >
         <div
@@ -370,6 +336,9 @@ function App() {
           >
             Toggle Belt Lengths
           </button>
+        </div>
+        <div>
+          <p>clicking on the bed will also move the tool</p>
         </div>
       </div>
     </div>

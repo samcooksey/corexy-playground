@@ -4,7 +4,7 @@ export function BeltLength({ length }: Readonly<{ length: number }>) {
   return (
     <span
       css={{
-        backgroundColor: 'pink',
+        backgroundColor: 'lightgreen',
       }}
     >
       {length}
